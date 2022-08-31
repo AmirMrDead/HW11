@@ -2,7 +2,7 @@ package question_4;
 
 import java.util.Arrays;
 
-public class HashMapImpl<K, V> implements MyHashMap<K,V> {
+public class HashMapImpl<K, V> implements MyHashMap<K, V> {
 
     private K[] keys;
     private V[] values;
@@ -105,11 +105,15 @@ public class HashMapImpl<K, V> implements MyHashMap<K,V> {
     }
 
     public static void main(String[] args) {
-        MyHashMap<String,Integer> myHashMap = new HashMapImpl<>(1,0.16f);
-        myHashMap.put("a",1);
-        myHashMap.put("b",1);
-        myHashMap.put("c",1);
+        MyHashMap<String, Integer> myHashMap = new HashMapImpl<>(1, 0.16f);
+        myHashMap.put("a", 1);
+        myHashMap.put("b", 1);
+        myHashMap.put("c", 1);
         System.out.println(myHashMap);
+        System.out.println(myHashMap.replace("a", "e", 5));
+        System.out.println(myHashMap.containKey("e"));
+        System.out.println(myHashMap.isEmpty());
+        System.out.println("\n" + myHashMap);
     }
 
 }
