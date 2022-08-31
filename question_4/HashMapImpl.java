@@ -48,7 +48,7 @@ public class HashMapImpl<K, V> implements MyHashMap<K, V> {
 
     @Override
     public void put(K key, V value) {
-        if (!duplicateKey(key))
+        if (duplicateKey(key))
             return;
         keys[index] = key;
         values[index++] = value;
@@ -56,7 +56,7 @@ public class HashMapImpl<K, V> implements MyHashMap<K, V> {
 
     @Override
     public boolean containKey(K key) {
-        return !duplicateKey(key);
+        return duplicateKey(key);
     }
 
     @Override
@@ -99,9 +99,9 @@ public class HashMapImpl<K, V> implements MyHashMap<K, V> {
         }
         for (int i = 0; i < index; i++) {
             if (keys[i] == key)
-                return false;
+                return true;
         }
-        return true;
+        return false;
     }
 
     public static void main(String[] args) {
