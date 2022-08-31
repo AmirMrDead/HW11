@@ -1,8 +1,6 @@
 package question_4;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 public class HashMapImpl<K, V> implements MyHashMap<K,V> {
 
@@ -49,12 +47,11 @@ public class HashMapImpl<K, V> implements MyHashMap<K,V> {
     }
 
     @Override
-    public boolean put(K key, V value) {
+    public void put(K key, V value) {
         if (!duplicateKey(key))
-            return false;
+            return;
         keys[index] = key;
         values[index++] = value;
-        return true;
     }
 
     @Override
